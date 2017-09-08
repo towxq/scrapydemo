@@ -68,6 +68,15 @@ class DemoSpider(scrapy.Spider):
 # 4，最后 由spider返回的item将被存到数据库（由某些item pipeline处理）或者使用feed exports存到文件中
 
 
+# Scrapy运行流程大概如下：
+#
+# 1,引擎从调度器中取出一个链接(URL)用于接下来的抓取
+# 2,引擎把URL封装成一个请求(Request)传给下载器
+# 3,下载器把资源下载下来，并封装成应答包(Response)
+# 4,爬虫解析Response
+# 5,解析出实体（Item）,则交给实体管道进行进一步的处理
+# 6,解析出的是链接（URL）,则把URL交给调度器等待抓取
+
 
 
 
